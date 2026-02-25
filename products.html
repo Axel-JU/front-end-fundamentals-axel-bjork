@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Script imports -->
+    <!-- <script
+      src="https://kit.fontawesome.com/dfaa1558af.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="https://unpkg.com/lucide@0.574.0/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/lucide@0.574.0"></script>
+
+    <script src="./js/main.js" defer></script>
+    <!-- Links -->
+    <link rel="stylesheet" href="style/index.css" />
+    <title>E-Commerce</title>
+  </head>
+  <body>
+    <header>
+      <!-- <i class="fa-solid fa-bars top-bar-icon"></i> -->
+      <h1 href="index.html">ENDGME</h1>
+      <div id="header-menu">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="cart-container">
+        <i data-lucide="shopping-cart" class="shopping-cart"></i>
+        <p id="cart-count"></p>
+      </div>
+
+      <!-- <i class="fa-solid fa-cart-shopping top-bar-icon"></i> -->
+    </header>
+    <aside>
+      <!-- Next to do is make the cart slide in drawer -->
+    </aside>
+    <main>
+        <!-- Product cards will be rendered here -->
+        <div class="product-card">
+          <div class="image-container">
+            <img src="assets/placeholders/image.png" alt="Product Image" />
+          </div>
+
+          <div class="product-info">
+            <h3>Product Name</h3>
+            <p>$120,00</p>
+            <div>
+              <button id="add-to-cart-btn" data-product-id="1">
+                <i data-lucide="plus"></i>
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+        
+    </main>
+    <!-- Dont forget to add footer here -->
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

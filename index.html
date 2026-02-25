@@ -4,17 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Script imports -->
-    <!-- <script
-      src="https://kit.fontawesome.com/dfaa1558af.js"
-      crossorigin="anonymous"
-    ></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/lucide@0.574.0/dist/umd/lucide.js"></script>
     <script src="https://unpkg.com/lucide@0.574.0"></script>
 
-    <script src="./js/main.js" defer></script>
+    <script type="module" src="./js/db.js"></script>
+    <script type="module" src="./js/main.js" defer></script>
     <!-- Links -->
     <link rel="stylesheet" href="style/index.css" />
-    <title>E-Commerce</title>
+    <title>ENDGME</title>
   </head>
   <body>
     <header>
@@ -30,11 +37,23 @@
           </ul>
         </nav>
       </div>
-      <i data-lucide="shopping-cart" class="shopping-cart"></i>
+
+      <div class="cart-container">
+        <div class="cart-button">
+          <i data-lucide="shopping-cart" class="shopping-cart"></i>
+          <p id="cart-count"></p>
+        </div>
+      </div>
 
       <!-- <i class="fa-solid fa-cart-shopping top-bar-icon"></i> -->
     </header>
-    <aside>
+    <aside class="cart-drawer">
+      <div class="cart-container">
+        <div class="cart-button">
+          <i data-lucide="x" class="shopping-cart"></i>
+          <p id="cart-count"></p>
+        </div>
+      </div>
       <!-- Next to do is make the cart slide in drawer -->
     </aside>
     <main>
@@ -43,18 +62,44 @@
           <h2>Featured Product</h2>
         </div>
       </section>
+      <section id="scrolling-ad">
+        <div class="scrolling-ad-content" id="scrolling-ad-content-1">
+          <p>Free shipping</p>
+          <i data-lucide="grip-vertical"></i>
+          <p>Swedish Products</p>
+          <i data-lucide="grip-vertical"></i>
+          <p>New Arrivals</p>
+          <i data-lucide="grip-vertical"></i>
+          <p>50% off selected products</p>
+          <i data-lucide="grip-vertical"></i>
+        </div>
+        <div class="scrolling-ad-content" id="scrolling-ad-content-2">
+          <p>Free shipping</p>
+          <i data-lucide="grip-vertical"></i>
+          <p>Swedish Products</p>
+          <i data-lucide="grip-vertical"></i>
+          <p>New Arrivals</p>
+          <i data-lucide="grip-vertical"></i>
+          <p>50% off selected products</p>
+          <i data-lucide="grip-vertical"></i>
+        </div>
+      </section>
       <section id="product-preview">
         <!-- Product cards will be rendered here -->
-        <div class="product-card">
+        <div class="product-card" data-product-id="1">
           <div class="image-container">
-            <img src="assets/placeholders/image.png" alt="Product Image" />
+            <img
+              class="product-image"
+              src="assets/placeholders/image.png"
+              alt="Product Image"
+            />
           </div>
 
           <div class="product-info">
-            <h3>Product Name</h3>
-            <p>$120,00</p>
+            <h3 class="product-name">Product Name</h3>
+            <p class="product-price">$120,00</p>
             <div>
-              <button id="add-to-cart-btn">
+              <button id="add-to-cart-btn" data-product-id="1">
                 <i data-lucide="plus"></i>
                 Add to cart
               </button>
@@ -63,7 +108,21 @@
         </div>
       </section>
     </main>
-    <footer>Contact info here</footer>
+    <footer>
+      <h3>Contact</h3>
+      <p>Email: contact@endgme.com</p>
+      <p>Phone: +46 71 234 56 78</p>
+      <p>Address: 123 Main Street, Anytown, Sweden</p>
+      <p>&copy; 2026 ENDGME. All rights reserved.</p>
+      <h3>Socials</h3>
+      <div class="socials">
+        <a href="#"><i data-lucide="facebook"></i></a>
+        <a href="#"><i data-lucide="twitter"></i></a>
+        <a href="#"><i data-lucide="instagram"></i></a>
+        <a href="#"><i data-lucide="youtube"></i></a>
+        <a href="#"><i data-lucide="linkedin"></i></a>
+      </div>
+    </footer>
     <script>
       lucide.createIcons();
     </script>
