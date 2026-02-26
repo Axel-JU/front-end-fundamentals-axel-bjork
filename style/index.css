@@ -70,7 +70,7 @@ header nav {
   transition: transform 0.4s ease-in-out;
   right: 0;
   z-index: 100;
-  background-color: red;
+  background-color: white;
   padding: 20px;
 }
 
@@ -94,6 +94,31 @@ header nav {
   align-items: center;
   gap: 5px;
   cursor: pointer;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+  grid-template-rows: 1fr;
+  border: 1px black solid;
+  margin-bottom: 10px;
+}
+.cart-item img {
+  object-fit: cover;
+  max-width: 80%;
+  height: auto;
+}
+
+.cart-item-info {
+}
+
+.cart-item-manager {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.cart-item-manager button {
+ min-width: min-content;
 }
 
 .product-card {

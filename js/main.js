@@ -1,8 +1,10 @@
+// localStorage.clear();
+import db from "./db.js";
+// import { plus, minus, createIcons } from "lucide";
+
 setup();
 updateCartCount();
 loadProducts();
-
-import db from "./db.js";
 
 function setup() {
   //checks if cart exists in localStorage, if not creates it
@@ -15,7 +17,7 @@ function setup() {
   document.querySelectorAll("#add-to-cart-btn").forEach((button) => {
     button.addEventListener("click", (e) => {
       const productId = e.target.getAttribute("data-product-id");
-      addProductToCart(productId);
+      manageProductInCart(productId, 1);
     });
   });
 
@@ -28,23 +30,94 @@ function setup() {
   });
 }
 
+function getProductFromDB(productId) {
+  for (let i = 0; i < db.length; i++) {
+    if (db[i].productId == productId) {
+      console.log("Found product in DB: ", db[i]);
+      return db[i];
+    }
+  }
+  console.log("did not find any products in db with id: ", productId);
+}
+
+function updateDrawerProducts(cart) {
+  document.querySelector("#cart-items-container").innerHTML = "";
+  let emptyCart = true;
+  for (let i = 0; i < cart.items.length; i++) {
+    if (cart.items[i].amount > 0) {
+      emptyCart = false;
+      let product = getProductFromDB(cart.items[i].id);
+      let productItem = document.createElement("div");
+      productItem.innerHTML = `
+    <div class="cart-item">
+      <img src="${product.image}" alt="${product.name}-image" class="cart-item-image">
+      <div class="cart-item-info">
+        <h4>${product.name}</h4>
+        <p>${product.price} kr</p>
+      </div>
+      <div class="cart-item-manager">
+        <button class="add-item" data-id="${product.id}">
+          <i data-lucide="plus"></i>
+        </button>
+        <p>${cart.items[i].amount}</p>
+        <button class="remove-item" data-id="${product.id}">
+          <i data-lucide="minus"></i>
+        </button>
+      </div>
+    </div>
+  `;
+
+      document.querySelector("#cart-items-container").appendChild(productItem);
+
+      document.querySelector(".add-item").addEventListener("click", (e) => {
+        manageProductInCart(cart.items[i].id, 1);
+      });
+      document.querySelector(".remove-item").addEventListener("click", (e) => {
+        manageProductInCart(cart.items[i].id, -1);
+      });
+
+      lucide.createIcons();
+    }
+  }
+  if (emptyCart) {
+    let emptyCartItem = document.createElement("h2");
+    emptyCartItem.textContent = "Cart empty";
+    document.querySelector("#cart-items-container").appendChild(emptyCartItem);
+  }
+}
+
 function updateCartCount() {
   let cart = JSON.parse(localStorage.getItem("cart"));
   console.log("cart found when updating cart!", cart);
-  let cartCount = cart.items.length;
+  let cartCount = 0;
+  for (let i = 0; i < cart.items.length; i++) {
+    cartCount += cart.items[i].amount;
+  }
+
   document.querySelector("#cart-count").textContent = cartCount
     ? cartCount
     : "";
+  updateDrawerProducts(cart);
 }
 
-function addProductToCart(ProductId) {
+function manageProductInCart(productId, delta) {
+  console.log("starting add product seq with productId: ", productId);
   let cart = JSON.parse(localStorage.getItem("cart"));
 
-  cart.items.push(ProductId);
+  let foundIndex = null;
+  for (let i = 0; i < cart.items.length; i++) {
+    if (cart.items[i].id === productId) {
+      foundIndex = i;
+      break;
+    }
+  }
+  console.log("foundindex: ", foundIndex);
+  if (foundIndex != null) {
+    cart.items[foundIndex].amount += delta;
+  } else {
+    cart.items.push({ id: productId, amount: delta });
+  }
   localStorage.setItem("cart", JSON.stringify(cart));
-
-  alert(`Product added to cart!`);
-  console.log(localStorage.getItem("cart"));
   updateCartCount();
 }
 
@@ -68,4 +141,3 @@ function loadProducts() {
     card.querySelector(".product-image").src = image;
   });
 }
-// localStorage.clear();
