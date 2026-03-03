@@ -1,4 +1,7 @@
 /* Universal css */
+* {
+  /* outline: 1px solid red; */
+}
 
 h1 {
   font-size: 2rem;
@@ -109,30 +112,58 @@ header nav {
   height: auto;
 }
 
-.cart-item-info {
+.cart-item-info h3 {
+  font-size: 1rem;
+  margin: 0;
 }
 
 .cart-item-manager {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+  background-color: black;
 }
 
 .cart-item-manager button {
- min-width: min-content;
+  min-width: min-content;
+  border: none;
+  color: white;
+  background-color: black;
+}
+.cart-item-manager button:active {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+.cart-item-manager p {
+  color: white;
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+  font-size: 1.2rem;
+}
+
+#product-preview {
+  display: grid;
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 25%;
   border: 1px solid #ddd;
   border-radius: 0;
-  margin: 10px;
+  margin: 20px;
   transition: all 0.2s ease-out;
+  flex-grow: 1;
+  flex: 1;
 }
 
-.product-card:hover {
+.product .product-card:hover {
   transform: scale(1.05);
   transition: all 0.2s ease-in;
 }
@@ -144,12 +175,42 @@ header nav {
 }
 
 .product-info {
-  padding-left: 15px;
-  padding-bottom: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1.5fr 1.8fr;
+  gap: 5px;
+}
+
+.product-info .product-name {
+  align-self: center;
+  justify-self: start;
+}
+.product-info .product-price {
+  align-self: top;
+  justify-self: start;
+  font-size: 1.2rem;
+}
+
+.add-to-cart-btn {
+  background-color: black;
+  border: none;
+  color: white;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.add-to-cart-btn:active {
+  background-color: lightblue;
+  color: black;
+  transform: scale(1.05);
 }
 
 .image-container {
@@ -169,10 +230,76 @@ header nav {
 }
 
 footer {
+  margin-top: 40px;
   background-color: black;
   color: white;
-  text-align: center;
   padding: 20px;
+}
+
+.footer-input-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  background-color: white;
+  width: 40%;
+  justify-self: center;
+  position: relative;
+  transform: translateY(-40px);
+  box-shadow: 0px 0px 5px black;
+}
+.footer-email-input {
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+  margin-right: 10px;
+}
+.footer-subscribe-btn {
+  background-color: #d82a2a;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.footer-copyright {
+  border-top: rgb(67, 66, 66) solid 1px;
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+.footer-socials {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+.footer-socials h3 {
+  justify-self: end;
+  align-self: center;
+  grid-column: 1 / span 5;
+}
+.footer-socials a {
+  color: #d82a2a;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  color: lightgray;
+}
+
+footer h3 {
+  color: white;
+}
+.footer-contact p {
+  padding-top: 5px;
 }
 
 /* For index.html */
@@ -208,10 +335,9 @@ footer {
   color: white;
   text-transform: uppercase;
   white-space: nowrap;
-}
-#scrolling-ad-content-1 {
   animation: marquee 25s linear infinite;
 }
+
 @keyframes marquee {
   from {
     transform: translateX(0%);
@@ -219,10 +345,6 @@ footer {
   to {
     transform: translateX(-100%);
   }
-}
-
-#scrolling-ad-content-2 {
-  animation: marquee 25s linear infinite;
 }
 
 .scrolling-ad-content svg {

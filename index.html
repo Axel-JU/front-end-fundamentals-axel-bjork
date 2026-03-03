@@ -54,8 +54,7 @@
           <p id="cart-count"></p>
         </div>
       </div>
-      <div id="cart-items-container">
-      </div>
+      <div id="cart-items-container"></div>
     </aside>
     <main>
       <section id="hero">
@@ -84,6 +83,16 @@
           <p>50% off selected products</p>
           <i data-lucide="grip-vertical"></i>
         </div>
+        <div class="scrolling-ad-content" id="scrolling-ad-content-3">
+          <p>Free shipping</p>
+          <i data-lucide="grip-vertical"></i>
+          <p>Swedish Products</p>
+          <i data-lucide="grip-vertical"></i>
+          <p>New Arrivals</p>
+          <i data-lucide="grip-vertical"></i>
+          <p>50% off selected products</p>
+          <i data-lucide="grip-vertical"></i>
+        </div>
       </section>
       <section id="product-preview">
         <!-- Product cards will be rendered here -->
@@ -99,29 +108,100 @@
           <div class="product-info">
             <h3 class="product-name">Product Name</h3>
             <p class="product-price">$120,00</p>
-            <div>
-              <button id="add-to-cart-btn" data-product-id="1">
-                <i data-lucide="plus"></i>
-                Add to cart
-              </button>
-            </div>
+
+            <button class="add-to-cart-btn" data-product-id="1">
+              <i data-lucide="plus"></i>
+              Add to cart
+            </button>
+          </div>
+        </div>
+        <div class="product-card" data-product-id="2">
+          <div class="image-container">
+            <img
+              class="product-image"
+              src="assets/placeholders/image.png"
+              alt="Product Image"
+            />
+          </div>
+
+          <div class="product-info">
+            <h3 class="product-name">Product Name</h3>
+            <p class="product-price">$120,00</p>
+
+            <button class="add-to-cart-btn" data-product-id="2">
+              <i data-lucide="plus"></i>
+              Add to cart
+            </button>
+          </div>
+        </div>
+        <div class="product-card" data-product-id="3">
+          <div class="image-container">
+            <img
+              class="product-image"
+              src="assets/placeholders/image.png"
+              alt="Product Image"
+            />
+          </div>
+
+          <div class="product-info">
+            <h3 class="product-name">Product Name</h3>
+            <p class="product-price">$120,00</p>
+
+            <button class="add-to-cart-btn" data-product-id="3">
+              <i data-lucide="plus"></i>
+              Add to cart
+            </button>
+          </div>
+        </div>
+        <div class="product-card" data-product-id="4">
+          <div class="image-container">
+            <img
+              class="product-image"
+              src="assets/placeholders/image.png"
+              alt="Product Image"
+            />
+          </div>
+
+          <div class="product-info">
+            <h3 class="product-name">Product Name</h3>
+            <p class="product-price">$120,00</p>
+
+            <button class="add-to-cart-btn" data-product-id="4">
+              <i data-lucide="plus"></i>
+              Add to cart
+            </button>
           </div>
         </div>
       </section>
     </main>
     <footer>
-      <h3>Contact</h3>
-      <p>Email: contact@endgme.com</p>
-      <p>Phone: +46 71 234 56 78</p>
-      <p>Address: 123 Main Street, Anytown, Sweden</p>
-      <p>&copy; 2026 ENDGME. All rights reserved.</p>
-      <h3>Socials</h3>
-      <div class="socials">
-        <a href="#"><i data-lucide="facebook"></i></a>
-        <a href="#"><i data-lucide="twitter"></i></a>
-        <a href="#"><i data-lucide="instagram"></i></a>
-        <a href="#"><i data-lucide="youtube"></i></a>
-        <a href="#"><i data-lucide="linkedin"></i></a>
+      <div class="footer-input-container">
+        <input
+          class="footer-email-input"
+          type="email"
+          placeholder="Sign up for our newsletter!"
+        />
+        <input type="submit" value="Subscribe" class="footer-subscribe-btn" />
+      </div>
+      <div class="footer-content">
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>contact@endgme.com</p>
+          <p>+46 71 234 56 78</p>
+          <p>Oxtorgsgatan 28, 553 84, Jönköping, Sweden</p>
+        </div>
+        <div class="footer-socials">
+          <h3>Socials</h3>
+          <a href="#"><i data-lucide="facebook"></i></a>
+          <a href="#"><i data-lucide="twitter"></i></a>
+          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="youtube"></i></a>
+          <a href="#"><i data-lucide="linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>ENDGME</p>
+        <p>&copy; 2026. All rights reserved.</p>
       </div>
     </footer>
     <script>

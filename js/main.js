@@ -14,9 +14,13 @@ function setup() {
   console.log("cart should be in local storage", localStorage.getItem("cart"));
 
   //adds event listener to all add to cart buttons
-  document.querySelectorAll("#add-to-cart-btn").forEach((button) => {
+  document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
     button.addEventListener("click", (e) => {
       const productId = e.target.getAttribute("data-product-id");
+      if (productId == null) {
+        console.error("could not find product id in button dataset");
+        return;
+      }
       manageProductInCart(productId, 1);
     });
   });
@@ -38,9 +42,11 @@ function getProductFromDB(productId) {
     }
   }
   console.log("did not find any products in db with id: ", productId);
+  console.log("localStorage: ", localStorage.getItem("cart"));
 }
 
 function updateDrawerProducts(cart) {
+  // Updates the html in the cart, with the products in localstorage cart
   document.querySelector("#cart-items-container").innerHTML = "";
   let emptyCart = true;
   for (let i = 0; i < cart.items.length; i++) {
@@ -52,8 +58,8 @@ function updateDrawerProducts(cart) {
     <div class="cart-item">
       <img src="${product.image}" alt="${product.name}-image" class="cart-item-image">
       <div class="cart-item-info">
-        <h4>${product.name}</h4>
-        <p>${product.price} kr</p>
+        <h3>${product.name}</h3>
+        <p>€${product.price}</p>
       </div>
       <div class="cart-item-manager">
         <button class="add-item" data-id="${product.id}">
@@ -69,10 +75,10 @@ function updateDrawerProducts(cart) {
 
       document.querySelector("#cart-items-container").appendChild(productItem);
 
-      document.querySelector(".add-item").addEventListener("click", (e) => {
+      productItem.querySelector(".add-item").addEventListener("click", (e) => {
         manageProductInCart(cart.items[i].id, 1);
       });
-      document.querySelector(".remove-item").addEventListener("click", (e) => {
+      productItem.querySelector(".remove-item").addEventListener("click", (e) => {
         manageProductInCart(cart.items[i].id, -1);
       });
 
@@ -87,6 +93,7 @@ function updateDrawerProducts(cart) {
 }
 
 function updateCartCount() {
+  //Updates the cart count in the header and the products in the cart drawer
   let cart = JSON.parse(localStorage.getItem("cart"));
   console.log("cart found when updating cart!", cart);
   let cartCount = 0;
@@ -101,6 +108,7 @@ function updateCartCount() {
 }
 
 function manageProductInCart(productId, delta) {
+  //Adds or removes a product from shopping cart
   console.log("starting add product seq with productId: ", productId);
   let cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -118,6 +126,7 @@ function manageProductInCart(productId, delta) {
     cart.items.push({ id: productId, amount: delta });
   }
   localStorage.setItem("cart", JSON.stringify(cart));
+  console.log("cart updated in localStorage: ", cart);
   updateCartCount();
 }
 

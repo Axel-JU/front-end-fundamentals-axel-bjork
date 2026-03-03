@@ -1,7 +1,7 @@
 const db = [
   {
     productId: 1,
-    name: "Product 1",
+    name: "Expedition Pfr Jacket",
     price: 19.99,
     description: "High-quality product with excellent features",
     image: "../assets/placeholders/image.jpg",
