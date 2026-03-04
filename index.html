@@ -20,14 +20,21 @@
     <script type="module" src="./js/db.js"></script>
     <script type="module" src="./js/main.js" defer></script>
     <!-- Links -->
+     <link rel="stylesheet" href="style/global.css">
     <link rel="stylesheet" href="style/index.css" />
     <title>ENDGME</title>
   </head>
   <body>
     <header>
-      <!-- <i class="fa-solid fa-bars top-bar-icon"></i> -->
-      <h1 href="index.html">ENDGME</h1>
-      <div id="header-menu">
+      <div class="mobile-menu-button-container">
+        <button class="mobile-menu-button" title="Open navigation menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+      <h1>
+        <a href="index.html">ENDGME</a>
+      </h1>
+      <div class="header-menu" id="desktop-header-menu">
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -39,20 +46,32 @@
       </div>
 
       <div class="cart-container">
-        <div class="cart-button">
+        <button class="cart-button">
           <i data-lucide="shopping-cart" class="shopping-cart"></i>
           <p id="cart-count"></p>
-        </div>
+        </button>
       </div>
-
-      <!-- <i class="fa-solid fa-cart-shopping top-bar-icon"></i> -->
     </header>
+    <aside class="header-menu mobile-header-menu">
+      <nav>
+        <button class="mobile-menu-button" title="Close navigation menu">
+          <i data-lucide="x"></i>
+        </button>
+        <ul class="mobile-menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </aside>
     <aside class="cart-drawer">
       <div class="cart-container">
-        <div class="cart-button">
+        <button class="cart-button">
           <i data-lucide="x" class="shopping-cart"></i>
           <p id="cart-count"></p>
-        </div>
+        </button>
+        <h3>Your Cart</h3>
       </div>
       <div id="cart-items-container"></div>
     </aside>
@@ -96,8 +115,13 @@
       </section>
       <section id="product-preview">
         <!-- Product cards will be rendered here -->
+        <div class="product-preview-label-container">
+          <h1>Products on fire right now!</h1>
+          <i data-lucide="flame" class="flame-icon"></i>
+        </div>
+
         <div class="product-card" data-product-id="1">
-          <div class="image-container">
+          <div class="card-image-container">
             <img
               class="product-image"
               src="assets/placeholders/image.png"
@@ -116,7 +140,7 @@
           </div>
         </div>
         <div class="product-card" data-product-id="2">
-          <div class="image-container">
+          <div class="card-image-container">
             <img
               class="product-image"
               src="assets/placeholders/image.png"
@@ -135,7 +159,7 @@
           </div>
         </div>
         <div class="product-card" data-product-id="3">
-          <div class="image-container">
+          <div class="card-image-container">
             <img
               class="product-image"
               src="assets/placeholders/image.png"
@@ -154,7 +178,7 @@
           </div>
         </div>
         <div class="product-card" data-product-id="4">
-          <div class="image-container">
+          <div class="card-image-container">
             <img
               class="product-image"
               src="assets/placeholders/image.png"

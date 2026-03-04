@@ -32,6 +32,14 @@ function setup() {
         .classList.toggle("cart-drawer-show");
     });
   });
+
+  document.querySelectorAll(".mobile-menu-button").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      document
+        .querySelector(".mobile-header-menu")
+        .classList.toggle("mobile-menu-show");
+    });
+  });
 }
 
 function getProductFromDB(productId) {
@@ -56,7 +64,9 @@ function updateDrawerProducts(cart) {
       let productItem = document.createElement("div");
       productItem.innerHTML = `
     <div class="cart-item">
-      <img src="${product.image}" alt="${product.name}-image" class="cart-item-image">
+      <div class="cart-item-image-container">
+        <img src="${product.image}" alt="${product.name}-image" class="cart-item-image">
+      </div>
       <div class="cart-item-info">
         <h3>${product.name}</h3>
         <p>€${product.price}</p>
@@ -78,9 +88,11 @@ function updateDrawerProducts(cart) {
       productItem.querySelector(".add-item").addEventListener("click", (e) => {
         manageProductInCart(cart.items[i].id, 1);
       });
-      productItem.querySelector(".remove-item").addEventListener("click", (e) => {
-        manageProductInCart(cart.items[i].id, -1);
-      });
+      productItem
+        .querySelector(".remove-item")
+        .addEventListener("click", (e) => {
+          manageProductInCart(cart.items[i].id, -1);
+        });
 
       lucide.createIcons();
     }
