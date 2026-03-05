@@ -1,0 +1,13 @@
+.product-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+}
+
+.product-info{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap: 20px;
+}

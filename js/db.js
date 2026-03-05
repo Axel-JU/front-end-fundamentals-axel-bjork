@@ -34,6 +34,27 @@ const db = [
     description: "Innovative product with cutting-edge technology",
     image: "../assets/placeholders/image.jpg",
   },
+  {
+    productId: 6,
+    name: "Product 6",
+    price: 69.99,
+    description: "Versatile product suitable for various applications",
+    image: "../assets/placeholders/image.jpg",
+  },
+  {
+    productId: 7,
+    name: "Product 7",
+    price: 79.99,
+    description: "High-performance product designed for demanding tasks",
+    image: "../assets/placeholders/image.jpg",
+  },
+  {
+    productId: 8,
+    name: "Product 8",
+    price: 89.99,
+    description: "Elegant product with a modern design",
+    image: "../assets/placeholders/image.jpg",
+  },
 ];
 
 export default db;

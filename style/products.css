@@ -1,0 +1,17 @@
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+}
+
+.products-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 40px;
+}
+
+header{
+    box-shadow: black 0px 0px 5px;
+}
