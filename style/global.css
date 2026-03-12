@@ -1,6 +1,9 @@
 * {
-  /* outline: 1px solid red; */
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1 {
