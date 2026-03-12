@@ -53,6 +53,9 @@ function changeImage(target) {
   const src = image.src;
   const direction = target.getAttribute("data-slide-direction");
   const id = new URLSearchParams(window.location.search).get("id");
+  if (db[id - 1].images.length === 1) {
+    return;
+  }
   let num;
   let filename = src.split("/")[src.split("/").length - 1];
   for (let i = 0; i < db[id - 1].images.length; i++) {
@@ -222,6 +225,9 @@ function loadProductPage() {
   document.querySelector(".product-info p:nth-child(3)").textContent =
     "€" + price;
   document.querySelector(".product-container img").src = image;
+  document
+    .querySelector(".add-to-cart-btn")
+    .setAttribute("data-product-id", productId);
 }
 
 if (window.location.pathname == "/product.html") {

@@ -49,7 +49,7 @@ const db = [
   },
   {
     productId: 5,
-    name: "Tech CMFERS 5",
+    name: "Tech CMFERS Pants",
     price: 59.99,
     description: "Innovative product with cutting-edge technology",
     images: [
@@ -61,30 +61,24 @@ const db = [
   },
   {
     productId: 6,
-    name: "Product 6",
+    name: "SUNBLCKR Cap",
     price: 69.99,
     description: "Versatile product suitable for various applications",
-    images: [
-      "../assets/images/cap_1.png",
-    ],
+    images: ["../assets/images/cap_1.png"],
   },
   {
     productId: 7,
     name: "Product 7",
     price: 79.99,
     description: "High-performance product designed for demanding tasks",
-    images: [
-      "../assets/placeholders/image.jpg",
-    ],
+    images: ["../assets/placeholders/image.jpg"],
   },
   {
     productId: 8,
     name: "Product 8",
     price: 89.99,
     description: "Elegant product with a modern design",
-    images: [
-      "../assets/placeholders/image.jpg",
-    ],
+    images: ["../assets/placeholders/image.jpg"],
   },
 ];
 
