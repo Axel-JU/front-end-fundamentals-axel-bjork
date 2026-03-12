@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+  padding: 0 20px;
 }
 
 .product-info {
@@ -11,8 +12,57 @@
   gap: 20px;
 }
 
+.product-info p {
+  font-size: 1.2rem;
+}
+
 .product-container img {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.image-selector {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+.image-selector svg {
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+}
+
+.add-to-cart-btn {
+  width: 50%;
+}
+
+.arrow {
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+}
+
+@media screen and (max-width: 1150px) {
+  .product-container {
+    grid-template-columns: 1fr;
+    padding: 0px 5%;
+  }
+
+  .product-info {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .image-selector svg {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+  }
+
+  .product-info h1 {
+    font-size: 1.5rem;
+  }
 }

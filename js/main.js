@@ -40,6 +40,45 @@ function setup() {
         .classList.toggle("mobile-menu-show");
     });
   });
+
+  document.querySelectorAll(".arrow").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      changeImage(e.currentTarget);
+    });
+  });
+}
+
+function changeImage(target) {
+  const image = document.querySelector(".product-container img");
+  const src = image.src;
+  const direction = target.getAttribute("data-slide-direction");
+  const id = new URLSearchParams(window.location.search).get("id");
+  let num;
+  let filename = src.split("/")[src.split("/").length - 1];
+  for (let i = 0; i < db[id - 1].images.length; i++) {
+    if (
+      filename ===
+      db[id - 1].images[i].split("/")[
+        db[id - 1].images[i].split("/").length - 1
+      ]
+    ) {
+      num = i;
+      break;
+    }
+  }
+  if (direction == 1) {
+    if (num < 3) {
+      image.src = db[id - 1].images[num + 1];
+    } else {
+      image.src = db[id - 1].images[0];
+    }
+  } else {
+    if (num === 0) {
+      image.src = db[id - 1].images[3];
+    } else {
+      image.src = db[id - 1].images[num - 1];
+    }
+  }
 }
 
 function getProductFromDB(productId) {
@@ -65,7 +104,7 @@ function updateDrawerProducts(cart) {
       productItem.innerHTML = `
     <div class="cart-item">
       <div class="cart-item-image-container">
-        <img src="${product.image}" alt="${product.name}-image" class="cart-item-image">
+        <img src="${product.images[0]}" alt="${product.name}-image" class="cart-item-image">
       </div>
       <div class="cart-item-info">
         <h3>${product.name}</h3>
@@ -154,7 +193,7 @@ function loadProducts() {
         name = db[i].name;
         price = db[i].price;
         description = db[i].description;
-        image = db[i].image;
+        image = db[i].images[0];
       }
     }
     card.querySelector(".product-name").textContent = name;
@@ -175,7 +214,7 @@ function loadProductPage() {
       name = db[i].name;
       price = db[i].price;
       description = db[i].description;
-      image = db[i].image;
+      image = db[i].images[0];
     }
   }
   document.querySelector(".product-info h1").textContent = name;
@@ -185,7 +224,7 @@ function loadProductPage() {
   document.querySelector(".product-container img").src = image;
 }
 
-if (window.location.pathname == ("/product.html")) {
+if (window.location.pathname == "/product.html") {
   console.log(window.location.pathname);
   loadProductPage();
 }

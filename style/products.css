@@ -4,6 +4,7 @@
   grid-template-rows: 1fr 1fr;
   gap: 20px;
   justify-content: center;
+  padding: 0px 20px;
 }
 
 .products-heading {
@@ -12,6 +13,24 @@
   margin-top: 40px;
 }
 
-header{
-    box-shadow: black 0px 0px 5px;
+header {
+  box-shadow: black 0px 0px 5px;
+}
+
+@media screen and (max-width: 1150px) {
+  .products-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .products-container {
+    padding: 5px;
+    gap: 0;
+  }
+  .product-price {
+    font-size: 0.8rem;
+    align-self: flex-end;
+  }
 }

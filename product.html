@@ -77,11 +77,24 @@
     </aside>
     <main>
       <div class="product-container">
-        <img src="./assets/placeholders/image.png" alt=" Product Image" />
+        <div class="image-selector">
+          <button class="arrow" data-slide-direction="-1">
+            <i data-lucide="arrow-left"></i>
+          </button>
+
+          <img src="./assets/placeholders/image.png" alt=" Product Image" />
+          <button class="arrow" data-slide-direction="1">
+            <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
         <div class="product-info">
           <h1>Product Name</h1>
           <p>Product Description</p>
           <p>Price: $120,00</p>
+          <button class="add-to-cart-btn" data-product-id="8">
+            <i data-lucide="plus"></i>
+            Add to cart
+          </button>
         </div>
       </div>
     </main>
