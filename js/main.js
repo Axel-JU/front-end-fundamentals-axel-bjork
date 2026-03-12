@@ -162,3 +162,30 @@ function loadProducts() {
     card.querySelector(".product-image").src = image;
   });
 }
+
+function loadProductPage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get("id");
+  let name;
+  let price;
+  let description;
+  let image;
+  for (let i = 0; i < db.length; i++) {
+    if (db[i].productId == productId) {
+      name = db[i].name;
+      price = db[i].price;
+      description = db[i].description;
+      image = db[i].image;
+    }
+  }
+  document.querySelector(".product-info h1").textContent = name;
+  document.querySelector(".product-info p").textContent = description;
+  document.querySelector(".product-info p:nth-child(3)").textContent =
+    "€" + price;
+  document.querySelector(".product-container img").src = image;
+}
+
+if (window.location.pathname == ("/product.html")) {
+  console.log(window.location.pathname);
+  loadProductPage();
+}
