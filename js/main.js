@@ -220,6 +220,6 @@ function loadProductPage() {
     .setAttribute("data-product-id", productId);
 }
 
-if (window.location.pathname == "/product.html") {
+if (window.location.pathname.endsWith("/product.html")) {
   loadProductPage();
 }
