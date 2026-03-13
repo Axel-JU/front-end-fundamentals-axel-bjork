@@ -1,6 +1,4 @@
-// localStorage.clear();
 import db from "./db.js";
-// import { plus, minus, createIcons } from "lucide";
 
 setup();
 updateCartCount();
@@ -11,7 +9,6 @@ function setup() {
   if (localStorage.getItem("cart") === null) {
     localStorage.setItem("cart", JSON.stringify({ items: [] }));
   }
-  console.log("cart should be in local storage", localStorage.getItem("cart"));
 
   //adds event listener to all add to cart buttons
   document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
@@ -87,12 +84,9 @@ function changeImage(target) {
 function getProductFromDB(productId) {
   for (let i = 0; i < db.length; i++) {
     if (db[i].productId == productId) {
-      console.log("Found product in DB: ", db[i]);
       return db[i];
     }
   }
-  console.log("did not find any products in db with id: ", productId);
-  console.log("localStorage: ", localStorage.getItem("cart"));
 }
 
 function updateDrawerProducts(cart) {
@@ -149,7 +143,6 @@ function updateDrawerProducts(cart) {
 function updateCartCount() {
   //Updates the cart count in the header and the products in the cart drawer
   let cart = JSON.parse(localStorage.getItem("cart"));
-  console.log("cart found when updating cart!", cart);
   let cartCount = 0;
   for (let i = 0; i < cart.items.length; i++) {
     cartCount += cart.items[i].amount;
@@ -163,7 +156,6 @@ function updateCartCount() {
 
 function manageProductInCart(productId, delta) {
   //Adds or removes a product from shopping cart
-  console.log("starting add product seq with productId: ", productId);
   let cart = JSON.parse(localStorage.getItem("cart"));
 
   let foundIndex = null;
@@ -173,14 +165,12 @@ function manageProductInCart(productId, delta) {
       break;
     }
   }
-  console.log("foundindex: ", foundIndex);
   if (foundIndex != null) {
     cart.items[foundIndex].amount += delta;
   } else {
     cart.items.push({ id: productId, amount: delta });
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  console.log("cart updated in localStorage: ", cart);
   updateCartCount();
 }
 
@@ -231,6 +221,5 @@ function loadProductPage() {
 }
 
 if (window.location.pathname == "/product.html") {
-  console.log(window.location.pathname);
   loadProductPage();
 }
