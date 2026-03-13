@@ -121,6 +121,7 @@ header nav {
   z-index: 100;
   background-color: white;
   padding: 20px;
+  overflow-y: auto;
 }
 
 .cart-drawer-show {

@@ -23,6 +23,10 @@
   animation: fireAnimation 1s infinite;
 }
 
+main {
+  margin-bottom: 100px;
+}
+
 @keyframes fireAnimation {
   0% {
     transform: scale(1);
@@ -41,13 +45,43 @@
 /* For index.html */
 
 #hero {
-  position: relative;
   width: 100%;
   height: 60vh;
   overflow: hidden;
   background-image: url(../assets/images/ENDGME\ hero.png);
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+#hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  height: 100%;
+}
+
+#hero h2 {
+  font-size: 3rem;
+  padding-left: 10%;
+  grid-column: 1 /3;
+}
+#hero p {
+  font-size: 2.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  grid-row: 3/4;
+  grid-column: 2/3;
+  align-self: flex-end;
+  text-shadow: rgb(112, 112, 112) 1px 1px 2px;
+}
+
+#hero i {
+  font-style: normal;
+  text-decoration: #d82a2a underline 4px;
+  text-underline-offset: 5px;
 }
 
 #scrolling-ad {
@@ -58,7 +92,6 @@
 }
 
 .scrolling-ad-content {
-  /* overflow: hidden; */
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -96,6 +129,19 @@
   .product-preview-label-container {
     grid-column: 1 / span 2;
   }
+  #hero h2 {
+    font-size: 2.5rem;
+    padding-left: 2%;
+    grid-column: 1 /3;
+  }
+  #hero p {
+    font-size: 2rem;
+    align-self: flex-end;
+    text-shadow: black 1px 1px 5px;
+    grid-column: 1/3;
+    justify-self: center;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -115,5 +161,19 @@
   }
   .product-preview-label-container h1 {
     font-size: 1.5rem;
+  }
+
+  #hero h2 {
+    font-size: 1.8rem;
+    padding: 0;
+    grid-column: 1 /3;
+    justify-self: center;
+  }
+
+  #hero p {
+    font-size: 1.5rem;
+  }
+  #hero {
+    padding-top: 0;
   }
 }

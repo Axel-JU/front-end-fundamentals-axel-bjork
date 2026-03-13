@@ -68,17 +68,17 @@ const db = [
   },
   {
     productId: 7,
-    name: "Product 7",
+    name: "WRMR Gloves",
     price: 79.99,
     description: "High-performance product designed for demanding tasks",
-    images: ["../assets/placeholders/image.jpg"],
+    images: ["../assets/images/gloves_1.png"],
   },
   {
     productId: 8,
-    name: "Product 8",
+    name: "DRY Sock Wool",
     price: 89.99,
     description: "Elegant product with a modern design",
-    images: ["../assets/placeholders/image.jpg"],
+    images: ["../assets/images/socks_1.png"],
   },
 ];
 
