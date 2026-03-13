@@ -18,7 +18,7 @@ const db = [
     description: "Premium product designed for everyday use. Features advanced fabric technology for comfort and style in any environment.",
     images: [
       "./assets/images/hoodie_1.png",
-      "./../assets/images/hoodie_2.png",
+      "../assets/images/hoodie_2.png",
       "./../assets/images/hoodie_3.png",
       "./../assets/images/hoodie_4.png",
     ],
@@ -29,7 +29,7 @@ const db = [
     price: 39.99,
     description: "Professional-grade product with advanced capabilities. Multiple pockets and reinforced stitching make these pants ideal for active lifestyles.",
     images: [
-      "./../assets/images/pants_1.png",
+      "../assets/images/pants_1.png",
       "./../assets/images/pants_2.png",
       "./../assets/images/pants_3.png",
       "./../assets/images/pants_4.png",
@@ -41,7 +41,7 @@ const db = [
     price: 49.99,
     description: "Durable product built to last. Spacious compartments and ergonomic design provide comfort and convenience for daily commutes.",
     images: [
-      "./../assets/images/backpack_1.png",
+      "/front-end-fundamentals-axel-bjork/assets/images/backpack_1.png",
       "./../assets/images/backpack_2.png",
       "./../assets/images/backpack_3.png",
       "./../assets/images/backpack_4.png",
