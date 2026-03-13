@@ -17,7 +17,7 @@ const db = [
     price: 29.99,
     description: "Premium product designed for everyday use. Features advanced fabric technology for comfort and style in any environment.",
     images: [
-      "./../assets/images/hoodie_1.png",
+      "./assets/images/hoodie_1.png",
       "./../assets/images/hoodie_2.png",
       "./../assets/images/hoodie_3.png",
       "./../assets/images/hoodie_4.png",
