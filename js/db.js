@@ -5,10 +5,10 @@ const db = [
     price: 19.99,
     description: "High-quality product with excellent features. Perfect for outdoor adventures, offering warmth and durability in harsh conditions.",
     images: [
-      "./../assets/images/jacket_1.png",
-      "./../assets/images/jacket_2.png",
-      "./../assets/images/jacket_3.png",
-      "./../assets/images/jacket_4.png",
+      "assets/images/jacket_1.png",
+      "assets/images/jacket_2.png",
+      "assets/images/jacket_3.png",
+      "assets/images/jacket_4.png",
     ],
   },
   {
