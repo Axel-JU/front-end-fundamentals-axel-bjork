@@ -19,10 +19,10 @@ const db = [
     description:
       "Premium product designed for everyday use. Features advanced fabric technology for comfort and style in any environment.",
     images: [
-      "./assets/images/hoodie_1.png",
-      "./assets/images/hoodie_2.png",
-      "./assets/images/hoodie_3.png",
-      "./assets/images/hoodie_4.png",
+      "assets/images/hoodie_1.png",
+      "assets/images/hoodie_2.png",
+      "assets/images/hoodie_3.png",
+      "assets/images/hoodie_4.png",
     ],
   },
   {
@@ -45,10 +45,10 @@ const db = [
     description:
       "Durable product built to last. Spacious compartments and ergonomic design provide comfort and convenience for daily commutes.",
     images: [
-      "/front-end-fundamentals-axel-bjork/assets/images/backpack_1.png",
-      "/front-end-fundamentals-axel-bjork/assets/images/backpack_2.png",
-      "/front-end-fundamentals-axel-bjork/assets/images/backpack_3.png",
-      "/front-end-fundamentals-axel-bjork/assets/images/backpack_4.png",
+      "assets/images/backpack_1.png",
+      "assets/images/backpack_2.png",
+      "assets/images/backpack_3.png",
+      "assets/images/backpack_4.png",
     ],
   },
   {
@@ -57,7 +57,7 @@ const db = [
     price: 59.99,
     description:
       "Innovative product with cutting-edge technology. Breathable materials and adjustable fit ensure maximum performance and comfort.",
-    images: ["./../assets/images/tech_cmfers_1.png"],
+    images: ["assets/images/tech_cmfers_1.png"],
   },
   {
     productId: 6,
@@ -65,7 +65,7 @@ const db = [
     price: 69.99,
     description:
       "Versatile product suitable for various applications. UV protection and lightweight design make it perfect for sunny days outdoors.",
-    images: ["./../assets/images/cap_1.png"],
+    images: ["assets/images/cap_1.png"],
   },
   {
     productId: 7,
@@ -73,7 +73,7 @@ const db = [
     price: 79.99,
     description:
       "High-performance product designed for demanding tasks. Insulated lining keeps your hands warm and comfortable in cold weather.",
-    images: ["./../assets/images/gloves_1.png"],
+    images: ["assets/images/gloves_1.png"],
   },
   {
     productId: 8,
@@ -81,7 +81,7 @@ const db = [
     price: 89.99,
     description:
       "Elegant product with a modern design. Made from premium wool, these socks offer superior moisture-wicking and all-day comfort.",
-    images: ["./../assets/images/socks_1.png"],
+    images: ["assets/images/socks_1.png"],
   },
 ];
 
